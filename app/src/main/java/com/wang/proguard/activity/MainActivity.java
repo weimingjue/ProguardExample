@@ -12,8 +12,10 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 
 /**
- * Activity名会保留
  * bean目录会被保留
+ * com.li的包下都会保留
+ * <p>
+ * Activity名会保留
  * 所有第三方代码都会被保留，如引用的fastjson
  */
 public class MainActivity extends AppCompatActivity {
