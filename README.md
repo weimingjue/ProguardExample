@@ -1,5 +1,5 @@
 MainActivity都有说明哪些东西会混淆
-app/release目录有打包好的apk，拖进idea即可查看混淆情况
+app/release目录有打包好的apk，拖进Android Studio即可查看混淆情况
 
 
 **proguard-rules.pro里有!com.wang.\*请改成自己的包路径：**
