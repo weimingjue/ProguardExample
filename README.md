@@ -17,3 +17,5 @@ app/release目录有打包好的apk，拖进Android Studio即可查看混淆情�
 2.查看release是否开启了混淆，打包时选择release，并用AS查看
 
 3.类似“!com.wang.\*”不能写2个，比如你在Proguard里同时写了“!com.wang.\*    ！com.li.\*”，这样肯定会失效
+
+4.确认你的混淆文件和上面基本一致（如不小心写了2个混淆文件，复制了其他人的混淆逻辑）
