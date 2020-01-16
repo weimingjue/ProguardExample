@@ -6,7 +6,7 @@ app/release目录有打包好的apk，拖进Android Studio即可查看混淆情�
 
 包路径即你java文件里声明“package com.x.x.x;”的前几个，一般情况下和packageName、applicationId相同
 
-举例：你Mainfest的packageName=“com.a.a”，build.gradle的applicationId=“com.b.b”，你的代码实际都是“package com.c.c.activity.MainActivity”及相关“com.c.c”目录下的，那么你应该写“-keep class !com.c.c {*;}”
+举例：你Mainfest的packageName=“com.a.a”，build.gradle的applicationId=“com.b.b”，你的代码实际都是“package com.c.c.activity.MainActivity”及相关“com.c.c”目录下的，那么你应该写“-keep class !com.c.c.** {*;}”
 
 
 **问题1：没混淆正常，开了混淆就崩溃**
