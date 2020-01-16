@@ -4,11 +4,14 @@ app/release目录有打包好的apk，拖进Android Studio即可查看混淆情�
 
 **proguard-rules.pro里有!com.wang.\*请改成自己的包路径：**
 
-一般是Mainfest的packageName（如果你的java里面“package com....”不是你的包路径，请自行修改）
+包路径即你java文件里声明“package com.x.x.x;”的前几个，一般情况下和packageName、applicationId相同
+
+举例：你Mainfest的packageName=“com.a.a”，build.gradle的applicationId=“com.b.b”，你的代码实际都是“package com.c.c.activity.MainActivity”及相关“com.c.c”目录下的，那么你应该写“-keep class !com.c.c {*;}”
+
 
 **问题1：没混淆正常，开了混淆就崩溃**
 
-请看日志！看日志！看日志！一般都是使用了反射出现的xxxNotFound异常，自行添加忽略
+请看日志！看日志！看日志！一般都是使用了反射出现的xxxNotFound异常或者一些bean数据类忘加了，自行添加忽略
 
 **问题2：开了混淆没任何作用**
 
