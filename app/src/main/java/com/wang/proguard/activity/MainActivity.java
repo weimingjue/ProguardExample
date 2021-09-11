@@ -11,6 +11,9 @@ import android.webkit.JavascriptInterface;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 
+import com.li.test.LiLi;
+import com.www.ww2.WwwTest;
+
 /**
  * bean目录会被保留
  * com.li的包下都会保留
@@ -33,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
         mWv = new WebView(this);
         mWv.setWebChromeClient(new WebTest());
         mTestC = new TestC();
+
+        System.out.println(LiLi.mName);
+        System.out.println("www类被混淆：" + WwwTest.wt + "，类名：" + WwwTest.class);
 
         //反射被混淆的类会报错
         try {

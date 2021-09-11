@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 31
     defaultConfig {
         applicationId "com.wang.proguard"
         minSdkVersion 19
-        targetSdkVersion 27
+        targetSdkVersion 31
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -16,20 +16,20 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
+            minifyEnabled false
+        }
+        //混淆，便于打包给测试
+        DebugProguard {
+            initWith debug
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-        //不混淆，便于debug
-        NoProguard {
-            initWith debug
-            minifyEnabled false
         }
     }
 }
 
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
-    api 'com.android.support:appcompat-v7:27.0.2'
+    api 'com.android.support:appcompat-v7:28.0.0'
 
     //所有第三方都会被保留
     api 'com.alibaba:fastjson:1.1.70.android'
